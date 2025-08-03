@@ -8,35 +8,58 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* ProcessLabs Scientific Design System */
+    --background: 210 20% 98%;
+    --foreground: 207 19% 36%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 207 19% 36%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 207 19% 36%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Scientific Blue - Primary brand color */
+    --primary: 207 75% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 207 75% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Laboratory Cyan - Accent color */
+    --accent: 189 100% 50%;
+    --accent-foreground: 207 75% 25%;
+    --accent-hover: 189 100% 45%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Neutral system */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 207 19% 36%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 10% 55%;
 
+    /* Smart Gray for text */
+    --text-primary: 207 19% 36%;
+    --text-secondary: 210 10% 55%;
+    --text-muted: 210 8% 65%;
+
+    /* Functional colors */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 15% 90%;
+    --input: 210 15% 95%;
+    --ring: 189 100% 50%;
 
-    --radius: 0.5rem;
+    /* Scientific gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-lab: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(189 100% 45%) 100%);
+
+    /* Shadows for depth */
+    --shadow-sm: 0 1px 3px 0 hsl(var(--primary) / 0.1);
+    --shadow-md: 0 4px 12px 0 hsl(var(--primary) / 0.1);
+    --shadow-lg: 0 8px 25px 0 hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.3);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
