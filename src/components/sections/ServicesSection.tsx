@@ -109,7 +109,6 @@ const ServicesSection = () => {
                   </ul>
 
                   <div className="border-t border-border pt-4">
-                    <div className="text-2xl font-bold text-primary mb-4">{service.price}</div>
                     <Button 
                       onClick={scrollToContact}
                       variant="outline" 

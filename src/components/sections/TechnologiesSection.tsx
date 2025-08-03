@@ -38,9 +38,13 @@ const TechnologiesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Наша лаборатория
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-6">
             Современный стек технологий для создания enterprise-решений
           </p>
+          <div className="inline-flex items-center bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium">
+            <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
+            Официальные партнеры amoCRM
+          </div>
         </div>
 
         {/* Technologies Grid */}

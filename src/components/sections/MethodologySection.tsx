@@ -3,9 +3,7 @@ import { Search, Palette, Code, Rocket, BarChart3 } from "lucide-react";
 const MethodologySection = () => {
   const steps = [
     {
-      number: "01",
-      title: "Research",
-      subtitle: "Исследование",
+      title: "Исследование",
       description: [
         "Анализ процессов",
         "Сбор данных",
@@ -15,9 +13,7 @@ const MethodologySection = () => {
       color: "accent"
     },
     {
-      number: "02",
-      title: "Design",
-      subtitle: "Проектирование",
+      title: "Проектирование",
       description: [
         "Архитектура решения",
         "Выбор технологий",
@@ -27,9 +23,7 @@ const MethodologySection = () => {
       color: "primary"
     },
     {
-      number: "03",
-      title: "Develop",
-      subtitle: "Разработка",
+      title: "Разработка",
       description: [
         "MVP разработка",
         "Тестирование гипотез",
@@ -39,9 +33,7 @@ const MethodologySection = () => {
       color: "accent"
     },
     {
-      number: "04",
-      title: "Deploy",
-      subtitle: "Внедрение",
+      title: "Внедрение",
       description: [
         "Миграция процессов",
         "Обучение команды",
@@ -51,9 +43,7 @@ const MethodologySection = () => {
       color: "primary"
     },
     {
-      number: "05",
-      title: "Optimize",
-      subtitle: "Оптимизация",
+      title: "Оптимизация",
       description: [
         "Анализ метрик",
         "A/B тестирование",
@@ -77,25 +67,30 @@ const MethodologySection = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {/* Timeline for Desktop */}
+          {/* Grid Layout for Desktop - 2 rows */}
           <div className="hidden md:block">
             <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-border transform -translate-y-1/2"></div>
+              {/* Connection Lines */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+                {/* First row connections */}
+                <path d="M 20% 25% L 50% 25%" stroke="hsl(var(--border))" strokeWidth="2" fill="none" />
+                <path d="M 50% 25% L 80% 25%" stroke="hsl(var(--border))" strokeWidth="2" fill="none" />
+                {/* Connect first row to second row */}
+                <path d="M 80% 25% Q 85% 25% 85% 50% Q 85% 75% 80% 75%" stroke="hsl(var(--border))" strokeWidth="2" fill="none" />
+                {/* Second row connections */}
+                <path d="M 80% 75% L 50% 75%" stroke="hsl(var(--border))" strokeWidth="2" fill="none" />
+                <path d="M 50% 75% L 20% 75%" stroke="hsl(var(--border))" strokeWidth="2" fill="none" />
+              </svg>
               
-              <div className="grid grid-cols-5 gap-8">
-                {steps.map((step, index) => {
+              {/* First Row */}
+              <div className="grid grid-cols-3 gap-8 mb-16">
+                {steps.slice(0, 3).map((step, index) => {
                   const IconComponent = step.icon;
                   return (
-                    <div key={index} className="relative">
-                      {/* Timeline Node */}
-                      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full ${
-                        step.color === 'accent' ? 'bg-accent' : 'bg-primary'
-                      } z-10`}></div>
-                      
+                    <div key={index} className="relative z-10">
                       {/* Step Content */}
-                      <div className="bg-card rounded-xl shadow-lab-md p-6 hover:shadow-lab-lg transition-all duration-300 hover:-translate-y-2 mt-12">
-                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
+                      <div className="bg-card rounded-xl shadow-lab-md p-6 hover:shadow-lab-lg transition-all duration-300 hover:-translate-y-2 text-center">
+                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto ${
                           step.color === 'accent' ? 'bg-accent/10' : 'bg-primary/10'
                         }`}>
                           <IconComponent className={`w-6 h-6 ${
@@ -103,13 +98,45 @@ const MethodologySection = () => {
                           }`} />
                         </div>
                         
-                        <div className="text-sm text-text-muted font-semibold mb-2">{step.number}</div>
-                        <h3 className="text-xl font-bold text-primary mb-2">{step.title}</h3>
-                        <h4 className="text-lg font-semibold text-text-primary mb-4">{step.subtitle}</h4>
+                        <h3 className="text-xl font-bold text-primary mb-4">{step.title}</h3>
                         
                         <ul className="space-y-2">
                           {step.description.map((item, itemIndex) => (
-                            <li key={itemIndex} className="text-text-secondary text-sm flex items-center">
+                            <li key={itemIndex} className="text-text-secondary text-sm flex items-center justify-center">
+                              <div className={`w-1.5 h-1.5 rounded-full mr-2 ${
+                                step.color === 'accent' ? 'bg-accent' : 'bg-primary'
+                              }`}></div>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Second Row */}
+              <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {steps.slice(3, 5).map((step, index) => {
+                  const IconComponent = step.icon;
+                  return (
+                    <div key={index} className="relative z-10">
+                      {/* Step Content */}
+                      <div className="bg-card rounded-xl shadow-lab-md p-6 hover:shadow-lab-lg transition-all duration-300 hover:-translate-y-2 text-center">
+                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto ${
+                          step.color === 'accent' ? 'bg-accent/10' : 'bg-primary/10'
+                        }`}>
+                          <IconComponent className={`w-6 h-6 ${
+                            step.color === 'accent' ? 'text-accent' : 'text-primary'
+                          }`} />
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-primary mb-4">{step.title}</h3>
+                        
+                        <ul className="space-y-2">
+                          {step.description.map((item, itemIndex) => (
+                            <li key={itemIndex} className="text-text-secondary text-sm flex items-center justify-center">
                               <div className={`w-1.5 h-1.5 rounded-full mr-2 ${
                                 step.color === 'accent' ? 'bg-accent' : 'bg-primary'
                               }`}></div>
@@ -142,8 +169,8 @@ const MethodologySection = () => {
                   }`}></div>
                   
                   {/* Step Content */}
-                  <div className="bg-card rounded-xl shadow-lab-md p-6">
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
+                  <div className="bg-card rounded-xl shadow-lab-md p-6 text-center">
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto ${
                       step.color === 'accent' ? 'bg-accent/10' : 'bg-primary/10'
                     }`}>
                       <IconComponent className={`w-6 h-6 ${
@@ -151,13 +178,11 @@ const MethodologySection = () => {
                       }`} />
                     </div>
                     
-                    <div className="text-sm text-text-muted font-semibold mb-2">{step.number}</div>
-                    <h3 className="text-xl font-bold text-primary mb-2">{step.title}</h3>
-                    <h4 className="text-lg font-semibold text-text-primary mb-4">{step.subtitle}</h4>
+                    <h3 className="text-xl font-bold text-primary mb-4">{step.title}</h3>
                     
                     <ul className="space-y-2">
                       {step.description.map((item, itemIndex) => (
-                        <li key={itemIndex} className="text-text-secondary text-sm flex items-center">
+                        <li key={itemIndex} className="text-text-secondary text-sm flex items-center justify-center">
                           <div className={`w-1.5 h-1.5 rounded-full mr-2 ${
                             step.color === 'accent' ? 'bg-accent' : 'bg-primary'
                           }`}></div>

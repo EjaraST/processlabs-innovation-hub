@@ -3,8 +3,8 @@ import { TrendingUp, Clock, DollarSign, Target } from "lucide-react";
 const CasesSection = () => {
   const cases = [
     {
-      company: "ООО Инкомнефтеремонт",
-      industry: "Нефтегазовая отрасль",
+      company: "Крупная строительная компания",
+      industry: "Строительство и недвижимость",
       challenge: "Автоматизация подбора персонала",
       solution: "AI-система полного цикла HR",
       results: [
@@ -15,8 +15,8 @@ const CasesSection = () => {
       description: "Внедрили комплексную AI-систему для автоматизации процесса найма: от анализа резюме до предсказания успешности кандидата в компании."
     },
     {
-      company: "EntechAI",
-      industry: "IT и разработка",
+      company: "Компания по производству светопрозрачных конструкций",
+      industry: "Производство и промышленность",
       challenge: "Анализ звонков продаж",
       solution: "TranskriBot с NLP",
       results: [
